@@ -111,17 +111,20 @@ const dares = [
     "Take off your shirt and swing it in the air for a minutes.",
 ];
 
-function getRandomTruthOrDare() {
-    const resultDiv = document.getElementById('result');
-    const randomIndex = Math.floor(Math.random() * 2);
+function getRandomTruth() {
+    displayResult('Truth', getRandomElement(truths));
+}
 
-    if (randomIndex === 0) {
-        resultDiv.innerHTML = `<p>Truth: ${getRandomElement(truths)}</P>`;
-    } else {
-        resultDiv.innerHTML = `<p>Dare: ${getRandomElement(dares)}</p>`;
-    }
+function getRandomDare() {
+    displayResult('Dare', getRandomElement(dares));
 }
 
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
+}
+
+function displayResult(type, content) {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = ''; // Clear existing content
+    resultDiv.innerHTML = `<p>${type}: ${content}</p>`;
 }
