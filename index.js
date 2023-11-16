@@ -125,6 +125,6 @@ function getRandomElement(array) {
 
 function displayResult(type, content) {
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = ''; // Clear existing content
+    resultDiv.innerHTML = '';
     resultDiv.innerHTML = `<p>${type}: ${content}</p>`;
 }
